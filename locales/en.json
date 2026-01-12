@@ -1,0 +1,84 @@
+{
+    "nav": {
+        "home": "Home",
+        "menu": "Menu",
+        "location": "Location",
+        "reserve": "Reserve"
+    },
+    "brand": {
+        "name": "Jamón Real",
+        "tagline": "The Pantry of Extremadura in Seville"
+    },
+    "hero": {
+        "title": "Jamón Real",
+        "subtitle": "Tradition and quality for over 30 years. Enjoy authentic Extremaduran cuisine in the heart of Seville, with the finest Iberian hams and traditional Spanish dishes.",
+        "viewMenu": "View our menu",
+        "howToGet": "How to get here"
+    },
+    "home": {
+        "traditionalCuisine": "Traditional Cuisine",
+        "traditionalCuisineDesc": "Authentic recipes passed down from generation to generation, made with fresh seasonal ingredients.",
+        "premiumProducts": "Premium Products",
+        "premiumProductsDesc": "Exclusive selection of acorn-fed Iberian hams, artisan sausages and the finest products from the land.",
+        "cozyAtmosphere": "Cozy Atmosphere",
+        "cozyAtmosphereDesc": "A warm and familiar space where you can enjoy the authentic experience of a traditional Sevillian tavern.",
+        "specialtiesTitle": "Our Specialties",
+        "specialtiesSubtitle": "Discover some of our most emblematic dishes, prepared with passion and dedication.",
+        "viewFullMenu": "View full menu",
+        "historyTitle": "Our History",
+        "historyText1": "Welcome to Mesón Jamón Real, the Pantry of Extremadura in Seville, founded in February 1987 by Fernando Gómez Real and his wife Esther (parents of the current owner). It is located in a building from the 1929 Ibero-American Exposition, in the heart of the Arenal neighborhood and just meters from Seville's Royal Maestranza bullring.",
+        "historyText2": "Since its beginnings as a small grocery store, it has followed an upward trajectory in constant evolution, offering traditional Extremaduran cuisine and exquisite samples of hams, sausages and cheeses from that region, thus becoming the best ambassador of Extremadura.",
+        "galleryTitle": "Gallery",
+        "gallerySubtitle": "A glimpse of our dishes, atmosphere and the experience that awaits you.",
+        "ctaTitle": "Come visit us",
+        "ctaSubtitle": "We await you in the heart of Seville to offer you an unforgettable gastronomic experience.",
+        "ctaHowToGet": "How to get here",
+        "ctaCallReserve": "Call to reserve"
+    },
+    "menu": {
+        "title": "Our Menu",
+        "subtitle": "Discover our selection of traditional preparations, wines, and specialties, all made with the finest ingredients.",
+        "allergenInfo": "If you have any food allergies or intolerances, please inform our staff. All our dishes may contain traces of allergens."
+    },
+    "location": {
+        "title": "Location & Contact",
+        "subtitle": "Come and enjoy authentic Extremaduran cuisine in Seville. We are located on C/ Pastor y Landero, just steps from Seville's Bullring.",
+        "contactInfo": "Contact information",
+        "address": "Address",
+        "viewOnMaps": "View on Google Maps",
+        "phone": "Phone",
+        "callToReserve": "Call to make your reservation",
+        "email": "Email",
+        "sendQuestions": "Send us your questions",
+        "openingHours": "Opening hours",
+        "schedule": "Schedule",
+        "scheduleInfo": "For the most up-to-date opening hours, please check our Google Maps listing.",
+        "howToGet": "How to get here",
+        "transportInfo": "We are located in the historic center of Seville, close to the main monuments and well connected by public transport.",
+        "readyToVisit": "Ready to visit us?",
+        "readyToVisitDesc": "Reserve your table and enjoy an authentic gastronomic experience"
+    },
+    "openingHours": {
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday",
+        "sunday": "Sunday",
+        "closed": "Closed",
+        "openNow": "Open now",
+        "closedNow": "Closed now"
+    },
+    "footer": {
+        "contact": "Contact",
+        "links": "Links",
+        "home": "Home",
+        "ourMenu": "Our Menu",
+        "locationHours": "Location & Hours",
+        "rights": "All rights reserved."
+    },
+    "imageLightbox": {
+        "clickToEnlarge": "Click to enlarge"
+    }
+}

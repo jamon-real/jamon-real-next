@@ -1,0 +1,84 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "menu": "Carta",
+        "location": "Ubicación",
+        "reserve": "Reservar"
+    },
+    "brand": {
+        "name": "Jamón Real",
+        "tagline": "La Despensa de Extremadura en Sevilla"
+    },
+    "hero": {
+        "title": "Jamón Real",
+        "subtitle": "Tradición y calidad desde hace más de 30 años. Disfruta de auténtica comida extremeña en el corazón de Sevilla, con los mejores jamones ibéricos y platos tradicionales.",
+        "viewMenu": "Ver nuestra carta",
+        "howToGet": "Cómo llegar"
+    },
+    "home": {
+        "traditionalCuisine": "Cocina Tradicional",
+        "traditionalCuisineDesc": "Recetas auténticas transmitidas de generación en generación, elaboradas con ingredientes frescos y de temporada.",
+        "premiumProducts": "Productos Premium",
+        "premiumProductsDesc": "Selección exclusiva de jamones ibéricos de bellota, embutidos artesanales y los mejores productos de la tierra.",
+        "cozyAtmosphere": "Ambiente Acogedor",
+        "cozyAtmosphereDesc": "Un espacio cálido y familiar donde disfrutar de la auténtica experiencia de un mesón tradicional sevillano.",
+        "specialtiesTitle": "Nuestras Especialidades",
+        "specialtiesSubtitle": "Descubre algunos de nuestros platos más emblemáticos, elaborados con pasión y dedicación.",
+        "viewFullMenu": "Ver carta completa",
+        "historyTitle": "Nuestra Historia",
+        "historyText1": "Bienvenidos a Mesón Jamón Real, la Despensa de Extremadura en Sevilla, fundado en febrero de 1987 por Fernando Gómez Real y su esposa Esther (padres del actual dueño). Se encuentra ubicado en un edificio perteneciente a la Exposición Iberoamericana del 29, en pleno corazón del barrio del Arenal y escasos metros de la Real Maestranza de Sevilla.",
+        "historyText2": "Desde sus inicios, en un pequeño colmado, ha seguido una trayectoria ascendente en constante evolución, ofreciendo la tradicional cocina extremeña y exquisitas muestras de jamones, chacinas y quesos de dicha región, convirtiéndose así, en la mejor embajadora de Extremadura.",
+        "galleryTitle": "Galería",
+        "gallerySubtitle": "Un vistazo a nuestros platos, ambiente y la experiencia que te espera.",
+        "ctaTitle": "Ven a visitarnos",
+        "ctaSubtitle": "Te esperamos en el corazón de Sevilla para ofrecerte una experiencia gastronómica inolvidable.",
+        "ctaHowToGet": "Cómo llegar",
+        "ctaCallReserve": "Llamar para reservar"
+    },
+    "menu": {
+        "title": "Nuestra Carta",
+        "subtitle": "Descubre nuestra selección de elaboraciones tradicionales, vinos y especialidades, todo con los mejores ingredientes.",
+        "allergenInfo": "Si tienes alguna alergia o intolerancia alimentaria, por favor informa a nuestro personal. Todos nuestros platos pueden contener trazas de alérgenos."
+    },
+    "location": {
+        "title": "Ubicación y Contacto",
+        "subtitle": "Ven a disfrutar de auténtica gastronomía extremeña en Sevilla. Estamos situados en C/ Pastor y Landero, a pocos pasos de la Plaza de Toros de Sevilla.",
+        "contactInfo": "Información de contacto",
+        "address": "Dirección",
+        "viewOnMaps": "Ver en Google Maps",
+        "phone": "Teléfono",
+        "callToReserve": "Llama para hacer tu reserva",
+        "email": "Email",
+        "sendQuestions": "Escríbenos tus consultas",
+        "openingHours": "Horarios de apertura",
+        "schedule": "Horario",
+        "scheduleInfo": "Para ver el horario más actualizado, consulta nuestro perfil en Google Maps.",
+        "howToGet": "Cómo llegar",
+        "transportInfo": "Estamos ubicados en el centro histórico de Sevilla, cerca de los principales monumentos y bien comunicados con transporte público.",
+        "readyToVisit": "¿Listo para visitarnos?",
+        "readyToVisitDesc": "Reserva tu mesa y disfruta de una experiencia gastronómica auténtica"
+    },
+    "openingHours": {
+        "monday": "Lunes",
+        "tuesday": "Martes",
+        "wednesday": "Miércoles",
+        "thursday": "Jueves",
+        "friday": "Viernes",
+        "saturday": "Sábado",
+        "sunday": "Domingo",
+        "closed": "Cerrado",
+        "openNow": "Abierto ahora",
+        "closedNow": "Cerrado ahora"
+    },
+    "footer": {
+        "contact": "Contacto",
+        "links": "Enlaces",
+        "home": "Inicio",
+        "ourMenu": "Nuestra Carta",
+        "locationHours": "Ubicación y Horarios",
+        "rights": "Todos los derechos reservados."
+    },
+    "imageLightbox": {
+        "clickToEnlarge": "Click para ampliar"
+    }
+}
