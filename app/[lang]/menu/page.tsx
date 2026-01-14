@@ -5,14 +5,13 @@ import { getTranslations, type Language } from "@/lib/translations"
 
 export const metadata: Metadata = {
   title: "Nuestra Carta - Mesón Jamón Real",
-  description: "Descubre nuestra selección de jamones ibéricos, platos tradicionales y especialidades españolas.",
 }
 
 export function generateStaticParams() {
   return [{ lang: "es" }, { lang: "en" }]
 }
 
-export default async function MenuPage({ params }: { params: { lang: Language } }) {
+export default async function MenuPage({ params }: { params: Promise<{ lang: Language }> }) {
   const resolvedParams = await params
   const { lang } = resolvedParams
   const t = getTranslations(lang)
@@ -43,7 +42,7 @@ export default async function MenuPage({ params }: { params: { lang: Language } 
       <section className="bg-muted/20 py-12 border-t border-border">
         <div className="container px-4 mx-auto">
           <div className="max-w-4xl mx-auto text-center">
-            <p className="text-sm text-muted-foreground leading-relaxed">{t.menu.allergenInfo}</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">*{t.menu.allergenInfo}</p>
           </div>
         </div>
       </section>

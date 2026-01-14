@@ -1,6 +1,9 @@
 import type { Product, Category } from "@/lib/sanity"
 import { ProductCard } from "./product-card"
 
+
+import type { Language } from "@/lib/translations"
+
 interface CategorySectionProps {
   category: Category
   products: Product[]
@@ -9,15 +12,18 @@ interface CategorySectionProps {
 export function CategorySection({ category, products }: CategorySectionProps) {
   const categoryProducts = products.filter((p) => p.category._id === category._id)
 
-  if (categoryProducts.length === 0) return null
+  if (categoryProducts.length === 0) {
+    console.warn(`No products found for category: ${category.name}`)
+    return null
+  }
+  console.log(JSON.stringify(category, null, 2))
+  console.log(`Rendering category: ${category.name} with ${categoryProducts.length} products.`)
 
-  // Detectar idioma por window.location.pathname
-  const lang = typeof window !== 'undefined' && window.location.pathname.startsWith('/en') ? 'en' : 'es'
   return (
-    <section className="mb-16">
-      <div className="mb-8">
+    <section className="mb-8">
+      <div className="mb-2">
         <h2 className="font-serif text-3xl font-bold text-foreground mb-2">
-          {lang === 'en' ? category.name_en : category.name_es}
+          {category.name}
         </h2>
       </div>
       <div className="space-y-2">

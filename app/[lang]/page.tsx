@@ -1,23 +1,22 @@
 import { Hero } from "@/components/hero"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { getProducts, getGalleryImages } from "@/lib/sanity"
+import { getProducts, getGalleryImages, getFeaturedProducts } from "@/lib/sanity"
 import { ProductCard } from "@/components/product-card"
 import { Gallery } from "@/components/gallery"
-import { UtensilsCrossed, Award, Clock, ThumbsUpIcon, SmilePlus } from "lucide-react"
+import { UtensilsCrossed, Award, SmilePlus } from "lucide-react"
 import { getTranslations, type Language } from "@/lib/translations"
 
-export function generateStaticParams() {
-  return [{ lang: "es" }, { lang: "en" }]
-}
 
-export default async function HomePage({ params }: { params: { lang: Language } }) {
+export default async function HomePage({ params }: { params: Promise<{ lang: Language }> }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams;
   const t = getTranslations(lang)
 
-  const [products, galleryImages] = await Promise.all([getProducts(), getGalleryImages()])
-  const featuredProducts = products.slice(0, 4)
+  const [featuredProducts, galleryImages] = await Promise.all([
+    getFeaturedProducts(),
+    getGalleryImages()
+  ])
 
   return (
     <div className="flex flex-col">
@@ -78,7 +77,7 @@ export default async function HomePage({ params }: { params: { lang: Language } 
 
             <div className="max-w-4xl mx-auto space-y-2 mb-12">
               {featuredProducts.map((product) => (
-                <ProductCard key={product._id} product={product} />
+                <ProductCard key={product._id} product={product} showAllergens={false} />
               ))}
             </div>
 

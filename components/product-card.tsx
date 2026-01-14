@@ -8,45 +8,36 @@ import { useState } from "react"
 import { ImageLightbox } from "./image-lightbox"
 import { ImageIcon } from "lucide-react"
 
-const allergenIcons: Record<string, string> = {
-  gluten: "🌾",
-  lactosa: "🥛",
-  huevo: "🥚",
-  pescado: "🐟",
-  "frutos secos": "🥜",
-  sulfitos: "🍷",
-}
-
 interface ProductCardProps {
   product: Product
+  showAllergens?: boolean
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+
+export function ProductCard({ product, showAllergens = true }: ProductCardProps) {
   const [showImage, setShowImage] = useState(false)
   const hasImage = !!product.image && !!product.image.asset?.url
-  // Detectar idioma por window.location.pathname
-  const lang: Language = typeof window !== 'undefined' && window.location.pathname.startsWith('/en') ? 'en' : 'es'
 
   return (
     <>
       <div className="py-4 border-b border-border last:border-0">
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1 min-w-0">
-            <h3 className="font-serif text-lg font-semibold mb-1">{lang === 'en' ? product.name_en : product.name_es}</h3>
-            {(lang === 'en' ? product.description_en : product.description_es) && (
+            <h3 className="font-serif text-lg font-semibold mb-1">{product.name}</h3>
+            {product.description && (
               <p className="text-sm text-muted-foreground mb-2">
-                {lang === 'en' ? product.description_en : product.description_es}
+                {product.description}
               </p>
             )}
-            {product.allergens && product.allergens.length > 0 && (
+            {showAllergens && product.allergens && product.allergens.length > 0 && (
               <div className="mt-2">
                 <span className="block font-semibold text-xs mb-1">
-                  {lang === 'en' ? 'Allergens:' : 'Alérgenos:'}
+                  Alérgenos (*):
                 </span>
                 <div className="flex flex-wrap gap-1 items-center">
                   {product.allergens.map((allergen) => (
                     <Badge key={allergen._id} variant="secondary" className="text-xs">
-                      {lang === 'en' ? allergen.name_en : allergen.name_es}
+                      {allergen.name}
                     </Badge>
                   ))}
                 </div>
@@ -70,8 +61,9 @@ export function ProductCard({ product }: ProductCardProps) {
       {hasImage && showImage && (
         <ImageLightbox
           src={product.image!.asset.url}
-          alt={product.image!.alt || (lang === 'en' ? product.name_en : product.name_es)}
-          title={lang === 'en' ? product.name_en : product.name_es}
+          alt={product.image!.alt || product.name}
+          title={product.name}
+          hoverText={"Zoom"}
         />
       )}
     </>

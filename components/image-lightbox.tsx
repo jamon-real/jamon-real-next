@@ -1,22 +1,22 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { getTranslations, type Language } from "@/lib/translations"
 import Image from "next/image"
 import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+
 
 interface ImageLightboxProps {
   src: string
   alt: string
   title?: string
-  lang?: Language
+  hoverText?: string
 }
 
-export function ImageLightbox({ src, alt, title }: ImageLightboxProps) {
+
+export function ImageLightbox({ src, alt, title, hoverText }: ImageLightboxProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const altText = alt || "Imagen de producto";
-  const t = getTranslations(typeof window !== 'undefined' && window.location?.pathname?.startsWith('/en') ? 'en' : 'es')
+  const altText = alt || title || "Imagen de producto";
 
   // Close on Escape key
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
@@ -43,7 +43,7 @@ export function ImageLightbox({ src, alt, title }: ImageLightboxProps) {
         />
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
           <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <p className="text-sm font-medium">{t.imageLightbox?.clickToEnlarge || "Click para ampliar"}</p>
+            <p className="text-sm font-medium">{hoverText}</p>
           </div>
         </div>
       </div>

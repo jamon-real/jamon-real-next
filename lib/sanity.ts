@@ -1,39 +1,40 @@
-// Sanity client configuration and data fetching utilities
-// Currently using mock data for static export compatibility
-// To enable live Sanity data: remove 'output: export' from next.config.mjs
-// and uncomment the fetch logic in getProducts() and getCategories()
-
 import { error } from "console"
+
 
 const SANITY_PROJECT_ID = "9utgjin4"
 const SANITY_DATASET = "production"
 const SANITY_API_VERSION = "2026-01-11"
 
+async function fetchFromSanity<T = any>(query: string): Promise<T[]> {
+  const url = `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${encodeURIComponent(query)}`
+  const response = await fetch(url, { next: { revalidate: 3600 } })
+  if (!response.ok) {
+    console.error("Failed to fetch from Sanity", response.statusText)
+    return []
+  }
+  const data = await response.json()
+  return data.result || []
+}
+
 export interface Category {
   _id: string
-  name_es: string
-  name_en: string
-  description_es?: string
-  description_en?: string
+  name: string
+  description?: string
 }
 
 export interface Product {
   _id: string
-  name_es: string
-  name_en: string
-  description_es?: string
-  description_en?: string
+  name: string
+  description?: string
   allergens?: Array<{
     _id: string
-    name_es: string
+    name: string
     name_en: string
   }>
   category: {
     _id: string
-    name_es: string
-    name_en: string
-    description_es?: string
-    description_en?: string
+    name: string
+    description?: string
   }
   image?: {
     asset: {
@@ -58,21 +59,16 @@ export interface GalleryImage {
 export async function getProducts(): Promise<Product[]> {
   const query = `*[_type == "product"]{
     _id,
-    name_es,
-    name_en,
-    description_es,
-    description_en,
+    name,
+    description,
     allergens[]->{
       _id,
-      name_es,
-      name_en
+      name,
     },
     category->{
       _id,
-      name_es,
-      name_en,
-      description_es,
-      description_en
+      name,
+      description,
     },
     image{
       asset->{
@@ -81,32 +77,17 @@ export async function getProducts(): Promise<Product[]> {
       alt
     }
   }`
-  const url = `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${encodeURIComponent(query)}`
-  const response = await fetch(url)
-  if (!response.ok) throw new Error("Failed to fetch products")
-  const data = await response.json()
-  console.log("Fetched products from Sanity:", data)
-  return data.result || []
+  return fetchFromSanity<Product>(query)
 }
 
 
 export async function getCategories(): Promise<Category[]> {
   const query = `*[_type == "category"]|order(orderRank asc){
     _id,
-    name_es,
-    name_en,
-    description_es,
-    description_en
+    name,
+    description
   }`
-  const url = `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${encodeURIComponent(query)}`
-  const response = await fetch(url)
-  if (!response.ok) {
-    console.error("Failed to fetch categories", response.statusText)
-    return []
-  }
-  const data = await response.json()
-  console.log("Fetched categories from Sanity:", data)
-  return data.result || []
+  return fetchFromSanity<Category>(query)
 }
 
 
@@ -121,12 +102,29 @@ export async function getGalleryImages(): Promise<GalleryImage[]> {
       }
     }
   }`
-  const url = `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${encodeURIComponent(query)}`
-  const response = await fetch(url)
-  if (!response.ok) {
-    console.error("Failed to fetch gallery images", error)
-    return []
-  }
-  const data = await response.json()
-  return data.result || []
+  return fetchFromSanity<GalleryImage>(query)
+}
+
+export async function getFeaturedProducts(): Promise<Product[]> {
+  const query = `*[_type == "product" && featured == true]{
+    _id,
+    name,
+    description,
+    allergens[]->{
+      _id,
+      name
+    },
+    category->{
+      _id,
+      name
+    },
+    image{
+      asset->{
+        url
+      },
+      alt
+    },
+    featured
+  }`
+  return fetchFromSanity<Product>(query)
 }

@@ -23,10 +23,10 @@
         "cozyAtmosphere": "Cozy Atmosphere",
         "cozyAtmosphereDesc": "A warm and familiar space where you can enjoy the authentic experience of a traditional Sevillian tavern.",
         "specialtiesTitle": "Our Specialties",
-        "specialtiesSubtitle": "Discover some of our most emblematic dishes, prepared with passion and dedication.",
+        "specialtiesSubtitle": "Discover some of our specialties and featured products, selected and prepared with passion and dedication.",
         "viewFullMenu": "View full menu",
         "historyTitle": "Our History",
-        "historyText1": "Welcome to Mesón Jamón Real, the Pantry of Extremadura in Seville, founded in February 1987 by Fernando Gómez Real and his wife Esther (parents of the current owner). It is located in a building from the 1929 Ibero-American Exposition, in the heart of the Arenal neighborhood and just meters from Seville's Royal Maestranza bullring.",
+        "historyText1": "Welcome to Mesón Jamón Real, the Pantry of Extremadura in Seville, founded in February 1987 by Fernando Gómez Real and his wife Estébana Fernández (parents of the current owner). It is located in a building from the 1929 Ibero-American Exposition, in the heart of the Arenal neighborhood and just meters from the Plaza de Toros de la Real Maestranza de Caballería de Sevilla.",
         "historyText2": "Since its beginnings as a small grocery store, it has followed an upward trajectory in constant evolution, offering traditional Extremaduran cuisine and exquisite samples of hams, sausages and cheeses from that region, thus becoming the best ambassador of Extremadura.",
         "galleryTitle": "Gallery",
         "gallerySubtitle": "A glimpse of our dishes, atmosphere and the experience that awaits you.",
@@ -38,11 +38,11 @@
     "menu": {
         "title": "Our Menu",
         "subtitle": "Discover our selection of traditional preparations, wines, and specialties, all made with the finest ingredients.",
-        "allergenInfo": "If you have any food allergies or intolerances, please inform our staff. All our dishes may contain traces of allergens."
+        "allergenInfo": "If you have any allergy or intolerance, always inform our staff before ordering. This menu is for guidance and may not be up to date. Our dishes may contain or have been in contact with allergens."
     },
     "location": {
         "title": "Location & Contact",
-        "subtitle": "Come and enjoy authentic Extremaduran cuisine in Seville. We are located on C/ Pastor y Landero, just steps from Seville's Bullring.",
+        "subtitle": "Come and enjoy authentic Extremaduran cuisine in Seville. We are located on C/ Pastor y Landero, just steps from the Plaza de Toros de la Real Maestranza de Caballería de Sevilla.",
         "contactInfo": "Contact information",
         "address": "Address",
         "viewOnMaps": "View on Google Maps",
