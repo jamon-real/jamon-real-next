@@ -37,8 +37,8 @@ export function Footer({ lang = "es" }: FooterProps) {
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 flex-shrink-0 text-primary" />
-                <a href="mailto:jamonreal@jamonreal.es" className="hover:text-primary transition-colors">
-                  jamonreal@jamonreal.es
+                <a href="mailto:jamonreal@jamonreal.com" className="hover:text-primary transition-colors">
+                  jamonreal@jamonreal.com
                 </a>
               </div>
             </div>

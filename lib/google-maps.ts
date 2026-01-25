@@ -15,7 +15,7 @@ export function getRestaurantInfo(): RestaurantInfo {
     name: "Mesón Jamón Real",
     address: address,
     phone: "+34954563998",
-    email: "jamonreal@jamonreal.es",
+    email: "jamonreal@jamonreal.com",
     mapEmbedUrl: `https://www.google.com/maps/embed/v1/place?key=&q=${encodedAddress}`,
   }
 }
