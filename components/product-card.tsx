@@ -1,7 +1,6 @@
 "use client"
 
-import type { Product } from "@/lib/sanity"
-import { getTranslations, type Language } from "@/lib/translations"
+import type { Product } from "@/lib/content"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
@@ -12,7 +11,6 @@ interface ProductCardProps {
   product: Product
   showAllergens?: boolean
 }
-
 
 export function ProductCard({ product, showAllergens = true }: ProductCardProps) {
   const [showImage, setShowImage] = useState(false)

@@ -1,8 +1,5 @@
-import type { Product, Category } from "@/lib/sanity"
+import type { Product, Category } from "@/lib/content"
 import { ProductCard } from "./product-card"
-
-
-import type { Language } from "@/lib/translations"
 
 interface CategorySectionProps {
   category: Category
@@ -13,11 +10,8 @@ export function CategorySection({ category, products }: CategorySectionProps) {
   const categoryProducts = products.filter((p) => p.category._id === category._id)
 
   if (categoryProducts.length === 0) {
-    console.warn(`No products found for category: ${category.name}`)
     return null
   }
-  console.log(JSON.stringify(category, null, 2))
-  console.log(`Rendering category: ${category.name} with ${categoryProducts.length} products.`)
 
   return (
     <section className="mb-8">

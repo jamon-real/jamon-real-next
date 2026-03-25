@@ -1,4 +1,4 @@
-import { getCategories, getProducts } from "@/lib/sanity"
+import { getCategories, getProducts } from "@/lib/content"
 import { CategorySection } from "@/components/category-section"
 import type { Metadata } from "next"
 import { getTranslations, type Language } from "@/lib/translations"

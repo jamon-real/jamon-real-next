@@ -94,6 +94,9 @@ export default async function LocationPage({ params }: { params: Promise<{ lang:
                                                 +34 954 56 39 98
                                             </a>
                                             <p className="text-sm text-muted-foreground mt-1">{t.location.callToReserve}</p>
+                                            <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 rounded-md p-3 mt-3 text-sm text-amber-900 dark:text-amber-100">
+                                                {t.location.emailReservationWarning}
+                                            </div>
                                         </div>
                                     </div>
 
@@ -109,7 +112,7 @@ export default async function LocationPage({ params }: { params: Promise<{ lang:
                                             >
                                                 {restaurantInfo.email}
                                             </a>
-                                            <p className="text-sm text-muted-foreground mt-1">{t.location.sendQuestions}</p>
+                                            <p className="text-sm text-muted-foreground mt-3">{t.location.sendQuestions}</p>
                                         </div>
                                     </div>
                                 </div>

@@ -1,7 +1,7 @@
 import { Hero } from "@/components/hero"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { getProducts, getGalleryImages, getFeaturedProducts } from "@/lib/sanity"
+import { getGalleryImages, getFeaturedProducts } from "@/lib/content"
 import { ProductCard } from "@/components/product-card"
 import { Gallery } from "@/components/gallery"
 import { UtensilsCrossed, Award, SmilePlus } from "lucide-react"
@@ -9,14 +9,33 @@ import { getTranslations, type Language } from "@/lib/translations"
 
 
 export default async function HomePage({ params }: { params: Promise<{ lang: Language }> }) {
-  const resolvedParams = await params;
-  const { lang } = resolvedParams;
+  const resolvedParams = await params
+  const { lang } = resolvedParams
   const t = getTranslations(lang)
 
   const [featuredProducts, galleryImages] = await Promise.all([
     getFeaturedProducts(),
     getGalleryImages()
   ])
+
+  const featuredProductsByCategory = featuredProducts.reduce<
+    Array<{ categoryId: string; categoryName: string; products: typeof featuredProducts }>
+  >((groups, product) => {
+    const existingGroup = groups.find((group) => group.categoryId === product.category._id)
+
+    if (existingGroup) {
+      existingGroup.products.push(product)
+      return groups
+    }
+
+    groups.push({
+      categoryId: product.category._id,
+      categoryName: product.category.name,
+      products: [product],
+    })
+
+    return groups
+  }, [])
 
   return (
     <div className="flex flex-col">
@@ -75,9 +94,16 @@ export default async function HomePage({ params }: { params: Promise<{ lang: Lan
               {t.home.specialtiesSubtitle}
             </p>
 
-            <div className="max-w-4xl mx-auto space-y-2 mb-12">
-              {featuredProducts.map((product) => (
-                <ProductCard key={product._id} product={product} showAllergens={false} />
+            <div className="max-w-4xl mx-auto mb-12">
+              {featuredProductsByCategory.map((group) => (
+                <section key={group.categoryId} className="mb-8 last:mb-0">
+                  <h3 className="text-[11px] uppercase tracking-wide text-muted-foreground mb-1">{group.categoryName}</h3>
+                  <div className="space-y-2">
+                    {group.products.map((product) => (
+                      <ProductCard key={product._id} product={product} showAllergens={false} />
+                    ))}
+                  </div>
+                </section>
               ))}
             </div>
 

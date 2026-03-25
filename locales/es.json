@@ -49,6 +49,7 @@
         "phone": "Teléfono",
         "callToReserve": "Llama para hacer tu reserva",
         "email": "Email",
+        "emailReservationWarning": "⚠️ No se hacen reservas por correo. Las reservas solo se realizan por teléfono.",
         "sendQuestions": "Escríbenos tus consultas",
         "openingHours": "Horarios de apertura",
         "schedule": "Horario",

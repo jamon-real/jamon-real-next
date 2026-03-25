@@ -1,6 +1,6 @@
 "use client"
 
-import type { GalleryImage } from "@/lib/sanity"
+import type { GalleryImage } from "@/lib/content"
 import { ImageLightbox } from "./image-lightbox"
 
 interface GalleryProps {
